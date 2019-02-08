@@ -15,3 +15,4 @@ ARPacman is a new augmented reality game created by a group of 6 developers. In 
 3. Ken Le
 4. Dave Cho
 5. Zeke Bouweraerts 
+6. Daniel Estrada
