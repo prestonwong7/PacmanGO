@@ -1,4 +1,4 @@
-# ARPacman
+# PacmanGO
 ARPacman is a new augmented reality game created by a group of 6 developers. In this game, there is a 2D and 3D version, both made by Unity and Google Maps API. 
 ## Goals
 1. Create 2D map
