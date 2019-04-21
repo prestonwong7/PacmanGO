@@ -29,7 +29,7 @@ namespace Mapbox.Examples
 		/// The location provider.
 		/// This is public so you change which concrete <see cref="T:Mapbox.Unity.Location.ILocationProvider"/> to use at runtime.
 		/// </summary>
-		ILocationProvider _locationProvider;
+		public ILocationProvider _locationProvider;
 		public ILocationProvider LocationProvider
 		{
 			private get
