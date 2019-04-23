@@ -8,6 +8,7 @@
     using Mapbox.Unity.Utilities;
     using System.Collections.Generic;
     using System;
+    using UnityEngine.UI;
 
     public class SpawnOnMap : MonoBehaviour
     {
@@ -27,6 +28,9 @@
         List<GameObject> _spawnedObjects;
 
         public PositionWithLocationProvider playerPosition;
+        public Text test;
+
+        int pelletsCollected = 0;
 
         void Start()
         {
@@ -46,17 +50,28 @@
         private void Update()
         {
             int count = _spawnedObjects.Count;
+            playerPosition.GetComponent<PositionWithLocationProvider>();
             for (int i = 0; i < count; i++)
             {
                 var spawnedObject = _spawnedObjects[i];
                 var location = _locations[i];
                 spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
                 spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
-                Math.Pow(playerPosition._locationProvider.CurrentLocation.LatitudeLongitude.x - _locations[i].x, 2);
-
-
+                //double x = Math.Pow(playerPosition._locationProvider.CurrentLocation.LatitudeLongitude.x - _locations[i].x, 2);
+                //double y = Math.Pow(playerPosition._locationProvider.CurrentLocation.LatitudeLongitude.y - _locations[i].y, 2);
+                float x = Vector3.Distance(playerPosition._locationProvider.CurrentLocation.LatitudeLongitude.ToVector3xz(), _locations[i].ToVector3xz());
+                //double final = Math.Sqrt(x + y);
+                Debug.Log("distanceformula: " + x);
+                if (x < 0.00006)
+                {
+                    _spawnedObjects.Remove(spawnedObject);
+                    pelletsCollected++;
+                }
+                test.text = "Pellets Collected: " + pelletsCollected;
 
             }
         }
+
+        
     }
 }
