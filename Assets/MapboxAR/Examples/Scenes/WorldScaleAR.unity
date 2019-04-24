@@ -265,6 +265,16 @@ MonoBehaviour:
   - 34.053993218, -118.1338475
   - 34.05388655, -118.134005
   - 34.05389321, -118.1337697
+  - 33.783300,-118.110075
+  - '33.783193,-118.110102 '
+  - '33.783577,-118.110097 '
+  - '33.783180,-118.110445 '
+  - '33.783951,-118.110081 '
+  - '33.784022,-118.110252 '
+  - '33.783808,-118.110424 '
+  - '33.783679,-118.110435 '
+  - '33.783438,-118.110456 '
+  - '33.783282,-118.110585 '
   _spawnScale: 1
   _markerPrefab: {fileID: 324678577128684647, guid: 6d8c3bee95dff8244ac95dbceed956b7,
     type: 3}
@@ -405,15 +415,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4564053892145812, guid: 35e76f6e52f5c4252a0b703cc2019a37, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4564053892145812, guid: 35e76f6e52f5c4252a0b703cc2019a37, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.813
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4564053892145812, guid: 35e76f6e52f5c4252a0b703cc2019a37, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114821216931946548, guid: 35e76f6e52f5c4252a0b703cc2019a37,
         type: 3}

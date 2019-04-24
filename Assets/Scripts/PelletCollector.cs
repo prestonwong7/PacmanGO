@@ -37,8 +37,8 @@ using Mapbox.Unity.Map;
             count++;
             Debug.Log("Collected Pellets: " + count);
 
-            other.gameObject.SetActive(false);
-            //Destroy(other.gameObject);
+            //other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
     }
 }

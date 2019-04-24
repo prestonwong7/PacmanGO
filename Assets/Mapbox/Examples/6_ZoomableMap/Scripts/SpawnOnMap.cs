@@ -35,7 +35,9 @@
         void Start()
         {
             _locations = new Vector2d[_locationStrings.Length];
+            
             _spawnedObjects = new List<GameObject>();
+            //location = new List<Vector2d>(_locations);
             for (int i = 0; i < _locationStrings.Length; i++)
             {
                 var locationString = _locationStrings[i];
@@ -65,7 +67,18 @@
                 if (x < 0.00006)
                 {
                     _spawnedObjects.Remove(spawnedObject);
+                    Vector2d[] temp = new Vector2d[_locations.Length - 1];
+                    for(int j = 0; j < temp.Length; j++)
+                    {
+                        if (j < i)
+                            temp[j] = _locations[j];
+                        else
+                            temp[j] = _locations[j + 1];
+                    }
+                    _locations = temp;
+                    //_locations[i] = new Vector2d(0,0);
                     pelletsCollected++;
+                    Destroy(spawnedObject);
                 }
                 test.text = "Pellets Collected: " + pelletsCollected;
 
