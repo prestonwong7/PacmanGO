@@ -28,9 +28,12 @@
         List<GameObject> _spawnedObjects;
 
         public PositionWithLocationProvider playerPosition;
-        public Text test;
+        public Text pelletsCollectedText;
+        public Text pelletsRemainingText;
 
         int pelletsCollected = 0;
+        int pelletsRemaining = 0;
+        bool pelletCountCheck = false;
 
         void Start()
         {
@@ -52,6 +55,11 @@
         private void Update()
         {
             int count = _spawnedObjects.Count;
+            if (pelletCountCheck == false)
+            {
+                pelletsRemaining = count;
+            }
+            pelletCountCheck = true;
             playerPosition.GetComponent<PositionWithLocationProvider>();
             for (int i = 0; i < count; i++)
             {
@@ -63,7 +71,7 @@
                 //double y = Math.Pow(playerPosition._locationProvider.CurrentLocation.LatitudeLongitude.y - _locations[i].y, 2);
                 float x = Vector3.Distance(playerPosition._locationProvider.CurrentLocation.LatitudeLongitude.ToVector3xz(), _locations[i].ToVector3xz());
                 //double final = Math.Sqrt(x + y);
-                Debug.Log("distanceformula: " + x);
+                //Debug.Log("distanceformula: " + x);
                 if (x < 0.00006)
                 {
                     _spawnedObjects.Remove(spawnedObject);
@@ -78,9 +86,11 @@
                     _locations = temp;
                     //_locations[i] = new Vector2d(0,0);
                     pelletsCollected++;
+                    pelletsRemaining--;
                     Destroy(spawnedObject);
                 }
-                test.text = "Pellets Collected: " + pelletsCollected;
+                pelletsCollectedText.text = "Pellets Collected: " + pelletsCollected;
+                pelletsRemainingText.text = "Pellets Remaining: " + pelletsRemaining;
 
             }
         }
