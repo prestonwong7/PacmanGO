@@ -34,14 +34,14 @@
 			if (location.Accuracy != 0)
 			{
 				float halfAcc = location.Accuracy / 2f;
-				_playerScale = new Vector3(halfAcc, halfAcc, halfAcc);
+				//_playerScale = new Vector3(halfAcc, halfAcc, halfAcc); // Make it so player doesnt keep changing size
 			}
 		}
 
 
 		void Update()
 		{
-			transform.localScale = _playerScale;
+			transform.localScale = _playerScale; // dont change player size
 		}
 	}
 }
