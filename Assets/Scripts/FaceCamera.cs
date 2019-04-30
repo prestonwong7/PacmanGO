@@ -9,14 +9,15 @@ using UnityEngine.UI;
 public class FaceCamera : MonoBehaviour
 {
     public Camera Camera;
-    private TextMeshPro distanceText;
-    private int distance = 0;
-    public PositionWithLocationProvider playerPosition;
+    public TextMeshPro PelletNumberText;
+    static int pelletNumber = 0;
+    //public PositionWithLocationProvider playerPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pelletNumber++;
+        PelletNumberText.text = "Pellet #: " + pelletNumber;
     }
 
     // Update is called once per frame
@@ -30,8 +31,8 @@ public class FaceCamera : MonoBehaviour
         {
             this.transform.LookAt(Camera.transform.position);
         }
-        playerPosition.GetComponent<PositionWithLocationProvider>();
-        float distance = Vector3.Distance(playerPosition._locationProvider.CurrentLocation.LatitudeLongitude.ToVector3xz(), this.gameObject.transform.localPosition.ToVector2d().ToVector3xz());
-        distanceText.text = "Distance: " + distance;
+        //playerPosition.GetComponent<PositionWithLocationProvider>();
+        //float distance = Vector3.Distance(playerPosition._locationProvider.CurrentLocation.LatitudeLongitude.ToVector3xz(), this.gameObject.transform.localPosition.ToVector2d().ToVector3xz());
+        //distanceText.text = "Pellet #: " + distance;
     }
 }
