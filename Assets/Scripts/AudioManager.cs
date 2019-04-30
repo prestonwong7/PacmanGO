@@ -36,9 +36,6 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         Play("BG Music");
-
-        //For when used in different script to play music
-        //FindObjectOfType<AudioManager>().Play("music name");
     }
 
     public void Play(string name)
@@ -50,5 +47,19 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+    }
+
+    public void Stop(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if(s.source.isPlaying)
+        {
+            s.source.Stop();
+        }
+        else
+        {
+            Debug.Log("Song is not playing at the moment");
+            return;
+        }
     }
 }
