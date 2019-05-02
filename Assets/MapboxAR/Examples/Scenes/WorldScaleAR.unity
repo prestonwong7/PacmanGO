@@ -273,7 +273,6 @@ GameObject:
   m_Component:
   - component: {fileID: 179144895}
   - component: {fileID: 179144896}
-  - component: {fileID: 179144897}
   m_Layer: 5
   m_Name: On/Off Toggle
   m_TagString: Untagged
@@ -344,8 +343,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: set_enabled
+      - m_Target: {fileID: 1673180113}
+        m_MethodName: Toggle_Change
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -358,18 +357,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
---- !u!114 &179144897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 179144894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5345e6eb9ca77844195adfa4fddc7add, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!21 &252976260
 Material:
   serializedVersion: 6
@@ -2787,6 +2774,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98be219873e6d4dffb5949746f515a33, type: 3}
+--- !u!1 &1673180112 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1611603657303738, guid: 98be219873e6d4dffb5949746f515a33,
+    type: 3}
+  m_PrefabInstance: {fileID: 1673180111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1673180113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673180112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5345e6eb9ca77844195adfa4fddc7add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1680096571
 PrefabInstance:
   m_ObjectHideFlags: 0
