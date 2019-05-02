@@ -7,7 +7,6 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     public static AudioManager instance;
 
-    // Start is called before the first frame update
     void Awake()
     {
         if(instance == null)
@@ -60,6 +59,14 @@ public class AudioManager : MonoBehaviour
         {
             Debug.Log("Song is not playing at the moment");
             return;
+        }
+    }
+
+    public void ChangeVolume(float value)
+    {
+        foreach(Sound s in sounds)
+        {
+            s.source.volume = value;
         }
     }
 }
