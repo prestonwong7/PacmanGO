@@ -9,6 +9,7 @@
     using System.Collections.Generic;
     using System;
     using UnityEngine.UI;
+    using UnityEngine.SceneManagement;
 
     public class SpawnOnMap : MonoBehaviour
     {
@@ -35,12 +36,18 @@
         int pelletsRemaining = 0;
         bool pelletCountCheck = false;
 
+        String[] mapLocations;
+ 
+
         void Start()
         {
+            mapLocations = PlayerPrefsX.GetStringArray("mapLocations");
             _locations = new Vector2d[_locationStrings.Length];
-            
+            for (int i = 0; i < _locationStrings.Length; i++)
+            {
+                _locationStrings[i] = mapLocations[i];
+            }
             _spawnedObjects = new List<GameObject>();
-            //location = new List<Vector2d>(_locations);
             for (int i = 0; i < _locationStrings.Length; i++)
             {
                 var locationString = _locationStrings[i];
@@ -50,6 +57,7 @@
                 instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
                 _spawnedObjects.Add(instance);
             }
+
         }
 
         private void Update()
@@ -92,6 +100,10 @@
                 pelletsCollectedText.text = "Pellets Collected: " + pelletsCollected;
                 pelletsRemainingText.text = "Pellets Remaining: " + pelletsRemaining;
 
+                if (pelletsRemaining == 0)
+                {
+                    SceneManager.LoadScene("Ending");
+                }
             }
         }
 
