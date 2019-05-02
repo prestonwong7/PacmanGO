@@ -97,10 +97,10 @@
                     pelletsRemaining--;
                     Destroy(spawnedObject);
                 }
-                pelletsCollectedText.text = "Pellets Collected: " + pelletsCollected;
+                pelletsCollectedText.text = "Pellets Collected: " + pelletsCollected + " / 10";
                 pelletsRemainingText.text = "Pellets Remaining: " + pelletsRemaining;
 
-                if (pelletsRemaining == 0)
+                if (pelletsCollected >= 10)
                 {
                     SceneManager.LoadScene("Ending");
                 }
