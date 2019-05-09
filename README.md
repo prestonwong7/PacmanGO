@@ -10,6 +10,10 @@ ARPacman is a new augmented reality game created by a group of 6 developers. In 
 ## Version Control
 - Git
 
+## Images
+![image](https://user-images.githubusercontent.com/30359951/57433999-bab3a000-71ee-11e9-91bd-7aa5bfa8d653.png)
+
+
 ## Download the Android APK
 https://drive.google.com/file/d/1O-4HzmVlfFllaSZEFNd_h5xfZ-Vk4v58/view?usp=sharing
 
