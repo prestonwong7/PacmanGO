@@ -1,13 +1,20 @@
 # PacmanGO
 ARPacman is a new augmented reality game created by a group of 6 developers. In this game, there is a 2D and 3D version, both made by Unity and Google Maps API. 
+
 ## Goals
-1. Create 2D map
-2. Get AR working
-3. Install Google Maps API
-4. Install ARCore for Unity.
+1. Get working with Mapbox
+2. Create collisions with pellets
+3. Get GPS coordinates and destroy pellet game object
+4. Main Menu and UI
 
 ## Version Control
 - Git
+
+## Download the Android APK
+https://drive.google.com/file/d/1O-4HzmVlfFllaSZEFNd_h5xfZ-Vk4v58/view?usp=sharing
+
+## Video Gameplay
+https://www.youtube.com/watch?v=xyvNEsCqpqs
 
 ## Developers
 1. Preston Wong
